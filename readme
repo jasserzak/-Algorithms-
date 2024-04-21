@@ -1,0 +1,35 @@
+function analyzeSentence(sentence) {
+  let lengthCounter = 0;
+  let wordCounter = 1;
+  let vowelCounter = 0;
+
+  // Iterate through each character in the sentence
+  for (let i = 0; i < sentence.length; i++) {
+    const char = sentence[i];
+
+    // Increment the length counter
+    lengthCounter++;
+
+    // Check if the character is a space or a punctuation mark
+    if (char === ' ' || char === '.' || char === ',' || char === '!' || char === '?') {
+      wordCounter++;
+    }
+
+    // Check if the character is a vowel
+    if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      vowelCounter++;
+    }
+  }
+
+  // Return the results as an object
+  return {
+    length: lengthCounter,
+    words: wordCounter,
+    vowels: vowelCounter
+  };
+}
+
+// Example usage
+const sentence = "Hello, world! How are you today?";
+const result = analyzeSentence(sentence);
+console.log(result);
